@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>ホーム</ion-title>
+      <!-- Nested Popover -->
+<ion-button  size="small" slot="end" id="nested-button">Language</ion-button>
+<ion-popover trigger="nested-button" [dismissOnSelect]="true">
+  <ng-template>
+    <ion-content>
+      <ion-list>
+        <ion-item [button]="true" [detail]="false" href="https://montsp-me.translate.goog/?_x_tr_sl=ja&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp">
+          <ion-label>English</ion-label>
+        </ion-item>
+        <ion-item [button]="true" [detail]="false" href="https://montsp-me.translate.goog/?_x_tr_sl=ja&_x_tr_tl=de&_x_tr_hl=ja&_x_tr_pto=wapp">
+          <ion-label>Deutsch</ion-label>
+        </ion-item>
+        <ion-item [button]="true" [detail]="false" href="https://montsp-me.translate.goog/?_x_tr_sl=ja&_x_tr_tl=zh-CN&_x_tr_hl=ja&_x_tr_pto=wapp">
+          <ion-label>中文</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ng-template>
+</ion-popover>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-card>
+        <ion-card-subtitle>ちょっと変わったやつのサイト</ion-card-subtitle>
+        <ion-card-title>codemeへようこそ</ion-card-title>
+        <ion-card-content>作者の備忘録のようなものだと思ってください。技術系のことを書いて、ブログみたいな感じで公開しています。不定期に公開されるので、楽しみに待っていてください！（個人経営のサイトって結構怪しく思われてるみたいで、、、）</ion-card-content>
+    </ion-card>
+    <ion-card>
+    <ion-card-header>
+      <ion-card-title>ご連絡</ion-card-title>
+    </ion-card-header>
+    <ion-card *ngFor="let t of notif" href="/{{t.url}}">
+      <ion-card-title>{{t.title}}</ion-card-title>
+      <ion-card-content>{{t.content}}</ion-card-content></ion-card>
+    </ion-card>
+  
+  </ion-content>
+  
